@@ -1,3 +1,5 @@
+import sys
+
 cpf_digitado = ''
 lista_cpf = []
 while len(lista_cpf) < 11:
@@ -7,12 +9,17 @@ while len(lista_cpf) < 11:
             int_cpf = int(cpf)
             lista_cpf.append(int_cpf)
             print(*lista_cpf)
+            cpf_digitado += cpf
+            cpf_validado = cpf_digitado[:9]
         else:
             print('Apenas um número por vez é permitido')
-        cpf_digitado += cpf
-        cpf_validado = cpf_digitado[:9]
     except ValueError:
         print('Apenas números inteiros são permitidos')
+
+cpf_repetido = cpf_digitado == cpf_digitado[0] * len(cpf_digitado)
+if cpf_repetido:
+    print('Você colocou números repetidos.')
+    sys.exit()
 
 contagem = 10
 resultado = 0
