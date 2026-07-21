@@ -1,3 +1,5 @@
+import sys
+
 typed_cpf = ''
 cpf_list = []
 while len(cpf_list) < 11:
@@ -7,13 +9,18 @@ while len(cpf_list) < 11:
             int_cpf = int(cpf)
             cpf_list.append(int_cpf)
             print(*cpf_list)
+            typed_cpf += cpf
+            validated_cpf = typed_cpf[:9]
         else:
             print('Only one number at a time is permitted')
-        typed_cpf += cpf
-        validated_cpf = typed_cpf[:9]
     except ValueError:
         print('Only integer numbers are allowed')
 
+repeated_cpf = typed_cpf == typed_cpf[0] * len(typed_cpf)
+if repeated_cpf:
+    print('You typed repeated numbers.')
+    sys.exit()
+    
 countdown = 10
 result = 0
 for number in validated_cpf:
