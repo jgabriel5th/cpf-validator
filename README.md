@@ -1,4 +1,4 @@
-![Coding Logo](code.png)
+![Coding Logo](https://www.flaticon.com/free-icon/backend-coding_17134144)
 # CPF Validator
 Well, the creation of this repository is to put an algorithm that I learned to do which is really useful where I live. And of course, enhance my knowledge in programming logic.
 
